@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//生成cnt条测试数据
+Route::get('/test/{cnt}','\App\Models\Post@testDatabase');
+
+//定向到主页
 Route::get('/', function () {
-    return response()->json(json_encode(DB::table('test')->get()));
+    return redirect('/blog');
 });
-Route::get('/test/{cnt}','\App\Models\Post@testDatabase');//生成cnt条测试数据
+
+Route::get('/blog', 'BlogController@index')->name('blog.home');
+
+Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.detail');
