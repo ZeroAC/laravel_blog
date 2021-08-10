@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return response()->json(json_encode(DB::table('test')->get()));
 });
-Route::get('/test','\App\Models\Post@testDatabase');
+Route::get('/test/{cnt}','\App\Models\Post@testDatabase');//生成cnt条测试数据
