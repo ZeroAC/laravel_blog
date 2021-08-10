@@ -26,6 +26,7 @@ class PostFactory extends Factory
     {
         //生成测试数据
         return [
+            'slug' => mt_rand(1,100000000),
             'title' => $this->faker->sentence(mt_rand(3, 10)),
             'content' => join("\n\n", $this->faker->paragraphs(mt_rand(3, 6))),
             'published_at' => $this->faker->dateTimeBetween('-1 month', '+3 days'),
