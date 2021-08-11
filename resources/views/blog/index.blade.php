@@ -20,7 +20,7 @@
         @endforeach
     </ul>
     <hr>
-    {!! $posts->render() !!}
+    {!! $posts->links() !!}
 </div>
 </body>
 </html>
